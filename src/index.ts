@@ -22,6 +22,8 @@ import SimulatorLocalePlugin from './plugins/plugin-simulator-locale';
 import lowcodePlugin from './plugins/plugin-lowcode-component';
 import appHelper from './appHelper';
 import './global.scss';
+import {saveSchema} from "./services/mockService";
+import SaveSchemaToBackEndPlugin from "./plugins/plugin-save-schema-backend";
 
 async function registerPlugins() {
   await plugins.register(InjectPlugin);
@@ -88,7 +90,7 @@ async function registerPlugins() {
   // 注册出码插件
   await plugins.register(CodeGenPlugin);
 
-  await plugins.register(SaveSamplePlugin);
+  // await plugins.register(SaveSamplePlugin);
 
   await plugins.register(PreviewSamplePlugin);
 
@@ -98,6 +100,8 @@ async function registerPlugins() {
   await plugins.register(SimulatorLocalePlugin);
 
   await plugins.register(lowcodePlugin);
+
+  await plugins.register(SaveSchemaToBackEndPlugin)
 };
 
 (async function main() {

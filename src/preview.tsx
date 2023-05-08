@@ -22,6 +22,7 @@ const SamplePreview = () => {
   async function init() {
     const scenarioName = getScenarioName();
     const packages = getPackagesFromLocalStorage(scenarioName);
+    // todo 如果发现url 存在 schemaid key ,读取value，然后获取schemaid 对应schema data
     const projectSchema = getProjectSchemaFromLocalStorage(scenarioName);
     const {
       componentsMap: componentsMapArray,
